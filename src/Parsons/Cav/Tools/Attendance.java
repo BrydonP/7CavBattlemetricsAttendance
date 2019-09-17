@@ -2,10 +2,14 @@ package Parsons.Cav.Tools;
 
 import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Attendance{
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException, InterruptedException{
         File file = new File("Results.txt");
         ArrayList<Member> members = new ArrayList<>();
         String name = "";
@@ -38,7 +42,9 @@ public class Attendance{
         }catch(NoSuchElementException e){
         }
 
-        printInfo(members);
+//        printInfo(members);
+        File raw = new File("data.txt");
+        cleanFile(raw);
     }
 
     private static int toMins(String s){
@@ -61,9 +67,7 @@ public class Attendance{
     }
 
     private static void printInfo(ArrayList<Member> members) throws FileNotFoundException{
-
         String credit;
-
         File output = new File("Final.txt");
         PrintWriter writer = new PrintWriter(output);
         writer.println("Event Roster:\n\n");
@@ -81,4 +85,53 @@ public class Attendance{
         }
         writer.close();
     }
+
+    private static File cleanFile(File file){
+        PrintWriter pw;
+        //=7Cav=MAJ.Parsons.B
+        Pattern name_PAT = Pattern.compile("=7Cav=[a-zA-Z0-9]{1,3}\\..*\\.[A-Z]{1,3}");
+        Pattern time_PAT = Pattern.compile("[0-9]{1,2}:[0-9]{1,2}$");
+        String input = "";
+        Matcher name_MAT;
+        Matcher time_MAT;
+        String name = "";
+        String time = "";
+
+        try{
+            pw = new PrintWriter("CleanedFile.txt");
+            Scanner scanner = new Scanner(file);
+            while(scanner.hasNextLine()){
+                input = scanner.nextLine();
+//                System.out.println(input);
+                name_MAT = name_PAT.matcher(input);
+                time_MAT = time_PAT.matcher(input);
+                System.out.println("Name:" + name_MAT.find());
+                System.out.println("Time:" + time_MAT.find());
+            }
+        }catch(FileNotFoundException ex){
+            System.out.println("File not found!");
+        }catch(IllegalStateException e){
+        }
+        return file;
+    }
+
+    public static void temp(){
+
+        // Get the regex to be checked
+        String regex = "GFG";
+
+        // Create a pattern from regex
+        Pattern pattern = Pattern.compile(regex);
+
+        // Get the String to be matched
+        String stringToBeMatched = "GFGFGFGFGFGFGFGFGFG";
+
+        // Create a matcher for the input String
+        Matcher matcher = pattern.matcher(stringToBeMatched);
+
+        // Get the subsequence
+        // using find() method
+        System.out.println(matcher.find());
+    }
+
 }
