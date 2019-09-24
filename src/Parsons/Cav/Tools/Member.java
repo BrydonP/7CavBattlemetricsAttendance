@@ -4,6 +4,7 @@ public class Member{
 
     private String name;
     private double time;
+    private String credit;
 
     public Member(String name, double time){
         this.name = name;
@@ -20,6 +21,14 @@ public class Member{
 
     public double getTime(){
         return time;
+    }
+
+    public String getCredit(){
+        return credit;
+    }
+
+    public void setCredit(String credit){
+        this.credit = credit;
     }
 
 }
