@@ -1,95 +1,102 @@
-Event Roster:
+Event Roster
+Name: =7Cav=SPC.Hawkins.C
+Total Minutes Played: 85.0
+Credit: YES
 
+Name: =7Cav=SGT.Moloney.CJ
+Total Minutes Played: 230.0
+Credit: YES
 
+Name: =7Cav=SPC.Siler.K
+Total Minutes Played: 236.0
+Credit: YES
+
+Name: =7Cav=MAJ.Parsons.B
+Total Minutes Played: 239.0
+Credit: YES
+
+Name: =7Cav=CPL.Shepard.J
+Total Minutes Played: 83.0
+Credit: YES
+
+Name: =7Cav=SPC.Park.P
+Total Minutes Played: 251.0
+Credit: YES
+
+Name: =7Cav=SPC.Sugg.J
+Total Minutes Played: 131.0
+Credit: YES
+
+Name: =7Cav=RCT.Schwartz.G
+Total Minutes Played: 78.0
+Credit: YES
+
+Name: =7Cav=CPL.Giron.C
+Total Minutes Played: 132.0
+Credit: YES
+
+Name: =7Cav=PFC.Drake.D
+Total Minutes Played: 100.0
+Credit: YES
+
+Name: =7Cav=PVT.Loe.J
+Total Minutes Played: 154.0
+Credit: YES
+
+Name: =7Cav=1LT.LaMar.S
+Total Minutes Played: 178.0
+Credit: YES
+
+Name: =7Cav=CPL.Palmero.B
+Total Minutes Played: 185.0
+Credit: YES
+
+Name: =7Cav=PVT.Sabourin.L
+Total Minutes Played: 94.0
+Credit: YES
+
+Name: =7Cav=SPC.Matthews.J
+Total Minutes Played: 91.0
+Credit: YES
+
+Name: =7Cav=MAJ.Czar.J
+Total Minutes Played: 106.0
+Credit: YES
+
+Name: =7Cav=SGT.Thorpe.C
+Total Minutes Played: 66.0
+Credit: YES
+
+Name: =7Cav=SPC.Galdis.D
+Total Minutes Played: 73.0
+Credit: YES
+
+------------------------------------------------
+NO CREDIT LIST
 Name: =7Cav=RET.Jacobs.R
 Total Minutes Played: 50.0
 Credit: NO
 
-Name: =7Cav=SPC.Hawkins.C
-Total Minutes Played: 208.0
-Credit: YES
-
-Name: =7Cav=SGT.Moloney.CJ
-Total Minutes Played: 311.0
-Credit: YES
-
-Name: =7Cav=SPC.Siler.K
-Total Minutes Played: 466.0
-Credit: YES
-
 Name: =7Cav=PFC.Wisser.C
-Total Minutes Played: 365.0
-Credit: YES
-
-Name: =7Cav=MAJ.Parsons.B
-Total Minutes Played: 276.0
-Credit: YES
-
-Name: =7Cav=CPL.Shepard.J
-Total Minutes Played: 424.0
-Credit: YES
-
-Name: =7Cav=SPC.Park.P
-Total Minutes Played: 267.0
-Credit: YES
-
-Name: =7Cav=SPC.Sugg.J
-Total Minutes Played: 382.0
-Credit: YES
-
-Name: =7Cav=RCT.Schwartz.G
-Total Minutes Played: 209.0
-Credit: YES
-
-Name: =7Cav=CPL.Giron.C
-Total Minutes Played: 146.0
-Credit: YES
-
-Name: =7Cav=PFC.Drake.D
-Total Minutes Played: 232.0
-Credit: YES
-
-Name: =7Cav=PVT.Loe.J
-Total Minutes Played: 254.0
-Credit: YES
-
-Name: =7Cav=1LT.LaMar.S
-Total Minutes Played: 332.0
-Credit: YES
+Total Minutes Played: 51.0
+Credit: NO
 
 Name: =7Cav=AR.Teddy.T
-Total Minutes Played: 363.0
-Credit: YES
-
-Name: =7Cav=CPL.Palmero.B
-Total Minutes Played: 476.0
-Credit: YES
+Total Minutes Played: 185.0
+Credit: NO
 
 Name: =7Cav=SPC.Hartshock.P
-Total Minutes Played: 180.0
-Credit: YES
-
-Name: =7Cav=PVT.Sabourin.L
-Total Minutes Played: 141.0
-Credit: YES
-
-Name: =7Cav=SPC.Matthews.J
-Total Minutes Played: 149.0
-Credit: YES
-
-Name: =7Cav=MAJ.Czar.J
-Total Minutes Played: 197.0
-Credit: YES
+Total Minutes Played: 21.0
+Credit: NO
 
 Name: =7Cav=SPC.Ferraro.P
-Total Minutes Played: 105.0
-Credit: YES
+Total Minutes Played: 54.0
+Credit: NO
 
-Name: =7Cav=SGT.Thorpe.C
-Total Minutes Played: 120.0
-Credit: YES
+------------------------------------------------
 
-Name: =7Cav=SPC.Galdis.D
-Total Minutes Played: 89.0
-Credit: YES
 
+ANALYSIS
+Total Players: 23
+Valid Players: 18
+Not Valid Players: 5

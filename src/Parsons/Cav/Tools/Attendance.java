@@ -2,14 +2,19 @@ package Parsons.Cav.Tools;
 
 import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Attendance{
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException, InterruptedException{
         File file = new File("Results.txt");
         ArrayList<Member> members = new ArrayList<>();
         String name = "";
         double time = 0;
+        int status;
 
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -20,16 +25,19 @@ public class Attendance{
                 input = scanner.next();
 
                 if(input.contains("7Cav")){
-                    name = input;
+                    name = input; // Grab Name
+                    time = toMins(scanner.next()); // Grab Duration
+
+                    //Check for existing members
+                    status = checkExistingMembers(members, name);
+                    if(status == -1){
+                        members.add(new Member(name, time)); //Add Member to List
+                    }else{
+                        //Update existing member
+                        members.get(status).addTime(time);
+                    }
                 }else{
-                    time = toMins(input);
-                }
-                int status = checkExistingMembers(members, name);
-                if(status == -1){
-                    members.add(new Member(name, time)); //Add Member to List
-                }else{
-                    //Update existing member
-                    members.get(status).addTime(time);
+                    System.out.println("Unknown data");
                 }
 
             }
@@ -39,6 +47,8 @@ public class Attendance{
         }
 
         printInfo(members);
+//        File raw = new File("data.txt");
+//        cleanFile(raw);
     }
 
     private static int toMins(String s){
@@ -61,24 +71,41 @@ public class Attendance{
     }
 
     private static void printInfo(ArrayList<Member> members) throws FileNotFoundException{
-
-        String credit;
-
         File output = new File("Final.txt");
         PrintWriter writer = new PrintWriter(output);
-        writer.println("Event Roster:\n\n");
-        System.out.println("Total Players: " + members.size());
+        writer.println("Event Roster");
+        ArrayList<Member> CreditList = new ArrayList<>();
+        ArrayList<Member> noCreditList = new ArrayList<>();
+
         for(int i = 0; i < members.size(); i++){
-            if(members.get(i).getTime() >= 60){
-                credit = "YES";
+            if((members.get(i).getTime() >= 60) && (!(members.get(i).getName().contains("AR")) && !(members.get(i).getName().contains("RET")))){
+                CreditList.add(members.get(i));
             }else{
-                credit = "NO";
+                noCreditList.add(members.get(i));
             }
-            writer.println("Name: " + members.get(i).getName());
-            writer.println("Total Minutes Played: " + members.get(i).getTime());
-            writer.println("Credit: " + credit);
-            writer.println("");
         }
+
+        for(int i = 0; i < CreditList.size(); i++){//Get Credit
+            writer.println("Name: " + CreditList.get(i).getName());
+            writer.println("Total Minutes Played: " + CreditList.get(i).getTime());
+            writer.println("Credit: YES");
+            writer.println();
+        }
+
+        writer.println("------------------------------------------------");
+        writer.println("NO CREDIT LIST");
+        for(int i = 0; i < noCreditList.size(); i++){//Don't Get Credit
+            writer.println("Name: " + noCreditList.get(i).getName());
+            writer.println("Total Minutes Played: " + noCreditList.get(i).getTime());
+            writer.println("Credit: NO");
+            writer.println();
+        }
+        writer.println("------------------------------------------------\n\n");
+
+        writer.println("ANALYSIS");
+        writer.println("Total Players: " + members.size());
+        writer.println("Valid Players: " + (members.size() - noCreditList.size()));
+        writer.println("Not Valid Players: " + noCreditList.size());
         writer.close();
     }
 }
